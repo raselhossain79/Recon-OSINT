@@ -532,4 +532,4 @@ file <downloaded-file>                           # Check file type
 - [Selenium (browser automation)](https://www.selenium.dev/)
 - [BeautifulSoup (HTML parsing)](https://www.crummy.com/software/BeautifulSoup/)
 - [Requests (HTTP library)](https://requests.readthedocs.io/)
-- [Git Dumper (git repository extraction)](https://github.com/arthaud/git-dumper)
+- [Git Dumper (git repository extraction)](https://github.com/arthaud/git-dumper) 
