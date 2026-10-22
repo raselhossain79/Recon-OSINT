@@ -1,0 +1,73 @@
+# Example Proxy List
+# =================
+#
+# Format: one proxy per line
+# Supported formats:
+#   - http://ip:port
+#   - https://ip:port
+#   - socks5://ip:port
+#   - ip:port (assumed http)
+#
+# Usage:
+#   python3 03-dork-automation.py -t example.com -p this-file.txt
+
+# Free Proxy List (Example IPs - These are fake/illustrative)
+# Note: Free proxies are unreliable and may not work
+# For real use, subscribe to a proxy service
+
+# HTTP Proxies
+http://203.0.113.1:8080
+http://203.0.113.2:3128
+http://203.0.113.3:8118
+http://203.0.113.4:80
+http://203.0.113.5:8080
+
+# HTTPS Proxies
+https://203.0.113.10:8443
+https://203.0.113.11:3128
+https://203.0.113.12:8080
+
+# SOCKS5 Proxies
+socks5://203.0.113.20:1080
+socks5://203.0.113.21:1080
+socks5://203.0.113.22:1080
+
+# Rotating Proxy Service (Paid)
+# Replace with actual service credentials
+# Format: http://username:password@proxy-service.com:port
+http://user:pass@rotating-proxy.example.com:8080
+
+# Residential Proxy (High Success Rate)
+# Example: Bright Data, Oxylabs, Smartproxy
+# http://customer:token@residential-proxy.example.com:port
+
+# ============================================
+# Proxy Service Recommendations
+# ============================================
+#
+# Free Proxies:
+#   - Less reliable, often flagged
+#   - Use only for testing
+#   - http://www.proxy-list.download/
+#
+# Paid Proxies (Recommended):
+#   - Bright Data (brighdata.com)
+#   - Oxylabs (oxylabs.io)
+#   - Smartproxy (smartproxy.com)
+#   - Scrapingbee (scrapingbee.com)
+#   - Zyte (zyte.com)
+#
+# VPN Services:
+#   - ExpressVPN
+#   - NordVPN
+#   - Mullvad
+#   (Not proxies, but provide IP rotation)
+
+# ============================================
+# Testing Proxy Connectivity
+# ============================================
+#
+# curl -x http://203.0.113.1:8080 https://ipinfo.io
+#
+# Expected output: Your proxy's IP address
+# If fails: proxy is not accessible or dead

@@ -1,0 +1,132 @@
+# Example Custom Dorks File
+# ======================
+#
+# Format: One dork per line
+# Use {target} as placeholder for domain
+# Lines starting with # are comments
+#
+# Usage:
+#   python3 03-dork-automation.py -t example.com -c this-file.txt
+
+# ============================================
+# Configuration & Environment Files
+# ============================================
+site:{target} filetype:env
+site:{target} filetype:conf
+site:{target} filetype:config
+site:{target} filetype:ini
+site:{target} filetype:json intext:api_key
+site:{target} inurl:.env
+site:{target} inurl:config.php
+site:{target} inurl:settings.json
+
+# ============================================
+# Database & Backup Files
+# ============================================
+site:{target} filetype:sql
+site:{target} filetype:sql.bak
+site:{target} filetype:bak
+site:{target} filetype:old
+site:{target} filetype:zip
+inurl:backup filetype:sql
+inurl:backup filetype:gz
+
+# ============================================
+# Git & Version Control
+# ============================================
+site:{target} inurl:.git/config
+site:{target} inurl:.gitignore
+site:{target} inurl:.git/HEAD
+site:{target} filetype:git
+
+# ============================================
+# Credentials & Secrets
+# ============================================
+intext:"API_KEY" site:{target}
+intext:"api_secret" site:{target}
+intext:"password" intext:"username" site:{target}
+intext:"db_username" intext:"db_password" site:{target}
+intext:"AWS_ACCESS_KEY" site:{target}
+intext:"STRIPE_SECRET" site:{target}
+
+# ============================================
+# Admin Panels & Access Points
+# ============================================
+site:{target} inurl:admin
+site:{target} inurl:/login
+site:{target} inurl:/signin
+site:{target} intitle:admin
+site:{target} inurl:phpmyadmin
+site:{target} inurl:cpanel
+
+# ============================================
+# Directory Listings
+# ============================================
+intitle:"Index of" site:{target}
+intitle:"Index of" /admin site:{target}
+intitle:"Index of" /backup site:{target}
+
+# ============================================
+# Error & Debug Pages
+# ============================================
+intext:"Stack Trace" site:{target}
+intext:"Exception" filetype:log site:{target}
+intext:"debug mode" site:{target}
+
+# ============================================
+# Subdomains & Asset Discovery
+# ============================================
+site:*.{target}
+site:*.{target} inurl:api
+site:*.{target} inurl:staging
+site:*.{target} inurl:dev
+site:*.{target} inurl:test
+
+# ============================================
+# Cloud Storage
+# ============================================
+site:s3.amazonaws.com {target}
+site:blob.core.windows.net {target}
+site:storage.googleapis.com {target}
+
+# ============================================
+# Source Code & Development Files
+# ============================================
+intext:"<?php" filetype:php site:{target}
+intext:"function" filetype:js site:{target}
+intext:"password =" filetype:py site:{target}
+inurl:src filetype:java
+
+# ============================================
+# Employee & OSINT
+# ============================================
+site:{target} filetype:pdf inauthor:"{target}"
+intext:"@{target}" filetype:pdf
+site:{target} inurl:directory
+intext:"employee" filetype:xlsx site:{target}
+
+# ============================================
+# API Documentation
+# ============================================
+site:{target} inurl:/api/docs
+site:{target} inurl:swagger
+site:{target} inurl:swagger.json
+site:{target} inurl:/graphql
+
+# ============================================
+# Custom/Specific Patterns
+# ============================================
+# Add target-specific dorks below
+
+# Example: Look for specific service references
+site:{target} "kubernetes"
+site:{target} "docker"
+site:{target} "terraform"
+
+# Example: Look for specific file names common to your target industry
+site:{target} filetype:xlsx "budget"
+site:{target} filetype:docx "confidential"
+
+# Example: Combination searches
+site:{target} filetype:pdf "2024" inauthor:"executive"
+site:{target} intext:"proprietary" filetype:docx
