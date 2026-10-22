@@ -554,13 +554,8 @@ Recommend:
 
 ## Sign-Off
 
-**Prepared by:** Penetration Tester  
-**Date:** 2024-01-15  
-**Reviewed by:** [Manager Name]  
-**Classification:** CONFIDENTIAL  
-**Distribution:** Client Only
-
----
-
-**Document Version:** 1.0  
-**Last Updated:** 2024-01-15 17:30 UTC
+**Prepared by: [Pentester]
+**Date: [actual engagement date]
+**Reviewed by: [actual reviewer or remove if solo work]
+**Classification: CONFIDENTIAL
+**Distribution: Client Only
