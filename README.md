@@ -12,6 +12,11 @@ Recon isn't "run subfinder, run nmap, done." Treated properly it's a staged inte
 00-methodology/       ← read first, every engagement
 01-osint/              ← organization/domain intel
   01-priority-technical/    ← do this every time (~20-40 min/target)
+    01-domain-dns-history/
+    02-org-corporate-intel/
+    03-breach-exposure/
+    04-email-username-format/
+    05-google-dorking/        ← operators, dork library, automation, when-to-use guide
   02-optional-investigative/← only if social-eng/phishing/physical is in scope
 02-reconnaissance/     ← the main technical phase
   01-web/
@@ -26,16 +31,10 @@ Recon isn't "run subfinder, run nmap, done." Treated properly it's a staged inte
 
 1. **`00-methodology/01-engagement-workflow.md`** — the master sequence; read this file first, it links to everything else in order.
 2. **`00-methodology/02-scope-and-legal-checklist.md`** — confirm authorization and boundaries before touching anything.
-3. **`01-osint/01-priority-technical/`** — quick pass: domain/DNS history, org/corporate intel, breach exposure, email format. Directly expands your asset list and gives tech-stack hints.
+3. **`01-osint/01-priority-technical/`** — quick pass: domain/DNS history, org/corporate intel, breach exposure, email format, and Google dorking. Directly expands your asset list and gives tech-stack hints, exposed files, and credential leaks.
+   - **`05-google-dorking/`** is itself scope-dependent — it has its own `00-when-to-use-what.md` deciding which dork categories apply to the current engagement type (web pentest, API pentest, red team, bug bounty) before anything in it gets run. Don't treat it as "run everything in the folder."
 4. *(Only if scope includes social-engineering/phishing/physical work)* **`01-osint/02-optional-investigative/`** — people, social media, geolocation, dark web, document metadata.
 5. **`02-reconnaissance/01-web/`** through **`06-wireless/`** — the main technical phase, passive techniques before active ones within each category. Work through whichever categories apply to your target's asset types.
 6. **`00-methodology/06-asset-inventory-template.md`** — every finding from steps 3–5 gets consolidated here. Nothing counts as a real target until it's in this sheet.
 7. **`00-methodology/07-tech-stack-vuln-mapping.md`** — cross-reference the consolidated tech stack against known CVEs.
 8. **`00-methodology/08-recon-to-scanning-handoff.md`** — triage, tool selection, manual/automated split, final scope re-check. This is the exit point — active scanning and exploitation live in a separate repo.
-
-## Conventions used throughout
-
-- Every technique file states whether it's **passive** (no direct target touch) or **active** (generates real traffic, log it) — this distinction matters for scope compliance and for pacing.
-- Every command includes a flag-by-flag explanation, not just the raw command — the goal is understanding why a flag is set, not copy-pasting blind.
-- Every file ends with an explicit **Output** section stating exactly which other file/step the findings feed into — nothing is a dead end.
-- Full English only throughout.
