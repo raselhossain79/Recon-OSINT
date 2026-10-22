@@ -2,7 +2,7 @@
 
 **Target:** example.com  
 **Assessment Date:** 2024-01-15  
-**Assessor:** Security Researcher (4xpl0it)  
+**Assessor:** Security Researcher 
 **Authorization:** Scope document signed 2024-01-14  
 **Classification:** CONFIDENTIAL
 
@@ -554,8 +554,8 @@ Recommend:
 
 ## Sign-Off
 
-**Prepared by: [Pentester]
-**Date: [actual engagement date]
-**Reviewed by: [actual reviewer or remove if solo work]
-**Classification: CONFIDENTIAL
-**Distribution: Client Only
+**Prepared by:** [Pentester]  
+**Date:** [actual engagement date]  
+**Reviewed by:** [actual reviewer or remove if solo work]  
+**Classification:** CONFIDENTIAL  
+**Distribution:** Client Only
